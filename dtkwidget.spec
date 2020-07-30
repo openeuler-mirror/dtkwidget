@@ -53,7 +53,6 @@ Header files and libraries for %{name}.
 sed -i 's|/lib|/libexec|' tools/svgc/svgc.pro
 
 %build
-# help find (and prefer) qt5 utilities, e.g. qmake, lrelease
 export PATH=%{_qt5_bindir}:$PATH
 %qmake_qt5 PREFIX=%{_prefix} LIB_INSTALL_DIR=%{_libdir} DBUS_VERSION_0_4_2=YES
 %make_build
@@ -78,5 +77,5 @@ export PATH=%{_qt5_bindir}:$PATH
 %{_libdir}/lib%{name}.so
 
 %changelog
-* Thu Jun 09 2020 uoser <uoser@uniontech.com> - 5.2.0-1
-- Update to 5.2.0
+* Thu Jul 30 2020 openEuler Buildteam <buildteam@openeuler.org> - 5.2.0-1
+- Package init
