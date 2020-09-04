@@ -1,10 +1,10 @@
 Name:           dtkwidget
 Version:        5.2.0
-Release:        1
+Release:        2
 Summary:        Deepin tool kit widget modules
 License:        GPLv3
 URL:            https://shuttle.deepin.com/cache/repos/apricot/release-candidate/RERFLWR0a2NvcmXmm7TmlrA1Njg/pool/main/d/dtkwidget/
-Source0:        %{name}_%{version}.orig.tar.xz
+Source0:        https://shuttle.deepin.com/cache/repos/apricot/release-candidate/RERFLWR0a2NvcmXmm7TmlrA1Njg/pool/main/d/%{name}/%{name}_%{version}.orig.tar.xz
 
 BuildRequires:  gcc-c++
 BuildRequires:  qt5-linguist
@@ -77,5 +77,8 @@ export PATH=%{_qt5_bindir}:$PATH
 %{_libdir}/lib%{name}.so
 
 %changelog
+* Thu Sep 3 2020 weidong <weidong@uniontech.com> - 5.2.0-2
+- fix source url in spec
+
 * Thu Jul 30 2020 openEuler Buildteam <buildteam@openeuler.org> - 5.2.0-1
 - Package init
