@@ -1,10 +1,10 @@
 Name:           dtkwidget
-Version:        5.2.0
-Release:        2
+Version:        5.2.2.3+rpm
+Release:        1
 Summary:        Deepin tool kit widget modules
 License:        GPLv3
 URL:            https://shuttle.deepin.com/cache/repos/apricot/release-candidate/RERFLWR0a2NvcmXmm7TmlrA1Njg/pool/main/d/dtkwidget/
-Source0:        https://shuttle.deepin.com/cache/repos/apricot/release-candidate/RERFLWR0a2NvcmXmm7TmlrA1Njg/pool/main/d/%{name}/%{name}_%{version}.orig.tar.xz
+Source0:        %{name}_%{version}.orig.tar.xz
 
 BuildRequires:  gcc-c++
 BuildRequires:  qt5-linguist
@@ -53,6 +53,7 @@ Header files and libraries for %{name}.
 sed -i 's|/lib|/libexec|' tools/svgc/svgc.pro
 
 %build
+# help find (and prefer) qt5 utilities, e.g. qmake, lrelease
 export PATH=%{_qt5_bindir}:$PATH
 %qmake_qt5 PREFIX=%{_prefix} LIB_INSTALL_DIR=%{_libdir} DBUS_VERSION_0_4_2=YES
 %make_build
@@ -66,8 +67,8 @@ export PATH=%{_qt5_bindir}:$PATH
 %doc README.md
 %license LICENSE
 %{_libdir}/lib%{name}.so.*
-%{_libdir}/libdtk-5.2.1/DWidget/bin/dtk-svgc
-%{_datadir}/libdtk-5.2.1/DWidget/translations
+%{_libdir}/libdtk-5.2.2/DWidget/bin/dtk-svgc
+%{_datadir}/libdtk-5.2.2/DWidget/translations
 
 %files devel
 %{_includedir}/libdtk-*/
@@ -77,8 +78,12 @@ export PATH=%{_qt5_bindir}:$PATH
 %{_libdir}/lib%{name}.so
 
 %changelog
+* Mon Jul 12 2021 weidong <weidong@uniontech.com> - 5.2.2.3+rpm-1
+- Update to 5.2.2.3+rpm
+
 * Thu Sep 3 2020 weidong <weidong@uniontech.com> - 5.2.0-2
 - fix source url in spec
 
 * Thu Jul 30 2020 openEuler Buildteam <buildteam@openeuler.org> - 5.2.0-1
 - Package init
+
