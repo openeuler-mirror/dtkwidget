@@ -1,6 +1,6 @@
 Name:           dtkwidget
 Version:        5.4.11.3
-Release:        1
+Release:        2
 Summary:        Deepin tool kit widget modules
 License:        LGPLv3+
 URL:            https://github.com/linuxdeepin/dtkwidget
@@ -42,6 +42,7 @@ BuildRequires:  gtest-devel
 BuildRequires:  qt5-qtbase-private-devel
 %{?_qt5:Requires: %{_qt5}%{?_isa} = %{_qt5_version}}
 
+Obsoletes:      dtkwidget2
 %description
 DtkWidget is Deepin graphical user interface for deepin desktop development.
 
@@ -80,6 +81,9 @@ export PATH=%{_qt5_bindir}:$PATH
 %{_libdir}/lib%{name}.so
 
 %changelog
+* Thu Jul 28 2022 liweiganga <liweiganga@uniontech.com> - 5.4.11.3-2
+- fix install conflict
+
 * Tue Jul 19 2022 konglidong <konglidong@uniontech.com> - 5.4.11.3-1
 - Update to 5.4.11.3
 
