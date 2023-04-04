@@ -1,6 +1,6 @@
 Name:           dtkwidget
-Version:        5.4.11.3
-Release:        2
+Version:        5.5.28
+Release:        1
 Summary:        Deepin tool kit widget modules
 License:        LGPLv3+
 URL:            https://github.com/linuxdeepin/dtkwidget
@@ -72,6 +72,7 @@ export PATH=%{_qt5_bindir}:$PATH
 %{_libdir}/lib%{name}.so.5*
 %{_libdir}/libdtk-*/
 %{_datadir}/libdtk-*/
+%{_libdir}/examples/collections
 
 %files devel
 %{_includedir}/libdtk-*/
@@ -81,6 +82,9 @@ export PATH=%{_qt5_bindir}:$PATH
 %{_libdir}/lib%{name}.so
 
 %changelog
+* Thu Mar 23 2023 liweiganga <liweiganga@uniontech.com> - 5.5.28-1
+- update to 5.5.28
+
 * Thu Jul 28 2022 liweiganga <liweiganga@uniontech.com> - 5.4.11.3-2
 - fix install conflict
 
